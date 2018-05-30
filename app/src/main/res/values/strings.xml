@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Zemogapp</string>
+    <string name="button_retry">Reintentar</string>
+    <string name="something_went_wrong">Algo salió mal, por favor intentalo de nuevo</string>
 </resources>
