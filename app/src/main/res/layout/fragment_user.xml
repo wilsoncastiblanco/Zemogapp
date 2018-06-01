@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/labelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Test" />
+
+    <TextView
+        android:id="@+id/labelPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone" />
+
+    <TextView
+        android:id="@+id/textViewPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="123123123123123" />
+
+    <TextView
+        android:id="@+id/labelEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="adasdas@fasdas.com" />
+
+    <TextView
+        android:id="@+id/labelWebSite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WebSite" />
+
+    <TextView
+        android:id="@+id/textViewWebSite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="wwww.aasdasdas.com" />
+
+
+</android.support.constraint.ConstraintLayout>

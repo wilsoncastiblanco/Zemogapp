@@ -2,7 +2,7 @@ package com.zemoga.app.posts
 
 import com.zemoga.app.commons.model.BasePresenter
 import com.zemoga.app.commons.model.BaseView
-import com.zemoga.app.posts.model.Posts
+import com.zemoga.app.posts.model.Post
 
 /**
  * Created by wilsoncastiblanco on 5/29/18.
@@ -10,7 +10,7 @@ import com.zemoga.app.posts.model.Posts
 interface PostsContract {
 
     interface View : BaseView {
-        fun showPosts(posts: List<Posts>)
+        fun showPosts(posts: List<Post>)
     }
 
     interface Presenter : BasePresenter {

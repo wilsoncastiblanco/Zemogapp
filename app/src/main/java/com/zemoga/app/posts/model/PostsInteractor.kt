@@ -12,7 +12,7 @@ import javax.inject.Inject
  */
 class PostsInteractor @Inject constructor(val postsInterface: PostsInterface) {
 
-    fun loadPosts(listener: ResponseEvent<List<Posts>>): Subscription {
+    fun loadPosts(listener: ResponseEvent<List<Post>>): Subscription {
         return postsInterface.getPosts()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -8,5 +8,5 @@ import rx.Observable
  */
 interface PostsInterface {
     @GET("/posts")
-    fun getPosts(): Observable<List<Posts>>
+    fun getPosts(): Observable<List<Post>>
 }

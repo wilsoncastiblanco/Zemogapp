@@ -12,17 +12,16 @@ import com.zemoga.app.commons.view.BaseFragment
 import com.zemoga.app.posts.PostsContract
 import com.zemoga.app.posts.injection.DaggerPostsComponent
 import com.zemoga.app.posts.injection.PostsModule
-import com.zemoga.app.posts.model.Posts
+import com.zemoga.app.posts.model.Post
 import com.zemoga.app.posts.view.adapters.PostsAdapter
-import kotlinx.android.synthetic.main.posts_fragment.*
+import kotlinx.android.synthetic.main.fragment_posts.*
 import javax.inject.Inject
 
 /**
  * Created by wilsoncastiblanco on 5/29/18.
  */
 
-class PostsFragment : BaseFragment(), PostsContract.View {
-
+class PostsFragment : BaseFragment(), PostsContract.View, PostsAdapter.Listener {
     @Inject
     lateinit var presenter: PostsContract.Presenter
 
@@ -42,10 +41,11 @@ class PostsFragment : BaseFragment(), PostsContract.View {
                 .postsModule(PostsModule(this))
                 .build()
                 .inject(this)
+        presenter.loadPosts()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.posts_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_posts, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,7 +63,7 @@ class PostsFragment : BaseFragment(), PostsContract.View {
         }
     }
 
-    override fun showPosts(posts: List<Posts>) {
+    override fun showPosts(posts: List<Post>) {
         postsAdapter.setData(posts)
     }
 
@@ -79,5 +79,17 @@ class PostsFragment : BaseFragment(), PostsContract.View {
                 .setAction(getString(R.string.button_retry)) {
                     //retry
                 }.show()
+    }
+
+    override fun onPostClicked(post: Post) {
+        val mContext = context
+        mContext?.let {
+            startActivity(PostsDetailActivity.createIntent(mContext, post))
+        }
+    }
+
+    override fun onDetach() {
+        presenter.onDestroy()
+        super.onDetach()
     }
 }
